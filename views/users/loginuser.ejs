@@ -1,0 +1,17 @@
+<header> <%- include('../navbar') %></header>
+
+
+<form class="mx-10" action="/" method="POST">
+    <h2 class="font-bold text-2xl mt-8">LOGIN</h2>
+    <hr class="border-yellow-500 border-2 w-[11%] my-3">
+    <p class="my-3 font-bold"> Email: </p>
+    <input class="w-1/2 h-[40px] px-6 py-3 border-2"
+        class="<%= validationerror.find(e => e.param === 'emit')? 'invalid':'' %>" name="email" type="email"
+        placeholder="Enter your Email">
+
+    <p class="my-3 font-bold">Password</p>
+    <input class="block w-1/2 h-[40px] px-6 py-3 border-2" name="password" type="text"
+        placeholder="Enter your Password">
+    <button class=" bg-yellow-500 py-1 px-8 rounded my-6 " type="submit">Login</button>
+    <a class="mx-6 text-blue-900  " href="/resetpassword">Reset Password </a>
+</form>

@@ -1,0 +1,40 @@
+<header> <%- include('../navbar') %></header>
+
+
+
+
+<div class="text-center my-8">
+    <button id="ordernow" class="bg-yellow-500 px-6 py-1">order</button>
+
+</div>
+
+
+<div class=" text-center">
+    <h2 class="font-bold text-lg my-3">Your order is Processing</h2>
+    <P class="my-2"><span class="font-bold text-blue-700">ORDER ID :</span> </P>
+
+    <p class="my-2">Track your order</p>
+    <a href="/product" class="bg-yellow-500 py-1 px-5 rounded my-6">Back to shopping</a>
+</div>
+
+
+<script src="https://js.stripe.com/v3/"></script>
+
+      <script>
+         var orderbtn = document.getElementById("ordernow")
+         orderbtn.addEventListener("click", function () {
+            $.ajax({
+               url: "/checkout",
+               type: "POST",
+               contentType: "application/json",
+               data: JSON.stringify({ quantity: 1 }),
+               success: function (data, textStaus, xhr) {
+                  var stripe = Stripe("<pk_test_51O4IP1SFhspWOsdeFakhFjPVNhfMT9wBfZOfuV0y1eEzAv4ItRKtJjaOfXP50JVUgtWi7lO7rJdU1dJY4SN5p49L00acndYadP>")
+                  return stripe.redirectToCheckout({
+                     sessionId: data.id
+                  })
+               }
+            })
+
+         })
+      </script>

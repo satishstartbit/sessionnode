@@ -1,0 +1,10 @@
+<header> <%- include('../navbar') %></header>
+
+
+<form class="mx-10" action="/updatepassword" method="POST">
+    <h2 class="font-bold text-2xl mt-8">Reset Password</h2>
+    <hr class="border-yellow-500 border-2 w-[11%] my-3">
+    <p class="my-3 font-bold"> Email: </p>
+    <input class="w-1/2 h-[40px] px-6 py-3 border-2" name="email" type="email" placeholder="Enter your Email">
+    <button class="block bg-yellow-500 py-1 px-8 rounded my-6 " type="submit">Next</button>
+</form>

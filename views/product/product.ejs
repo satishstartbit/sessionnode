@@ -1,0 +1,37 @@
+<header> <%- include('../navbar') %></header>
+
+
+<form id="form" action="/cart/">
+    <div class="grid grid-cols-3">
+        <% for(let key of product){ %>
+            <div class="mx-8">
+                <h2 class="font-bold text-lg"><%- key.title %></h2>
+                <p><%- key.description %></p>
+                <div class="my-4 ">
+                    <span class="text-red-500 mx-5">Product type </span>
+                    <span><%- key.producttype %></span>
+                </div>
+
+                <div class="my-4">
+                    <span class="text-red-500 mx-6">Rating </span>
+                    <span class="mx-6"><%- key.rating %></span>
+                </div>
+
+                <a href="/deleteproduct/<%- key._id %>" class="bg-yellow-500 px-6 rounded float-right" >delete </a>
+                <button onclick="addproducttocart('<%- key._id %>')" class="bg-yellow-500 px-6 rounded"
+                    type="submit">Add to cart</button>
+            </div>
+            <%} %>
+    </div>
+
+    <div class="pagination text-center my-6">
+        <% for(let i=1 ; i <=totalitem ; i++){ %>
+            <a class="bg-blue-500 px-3 py-2 mx-2 text-white" href="/product/?page=<%- i %>"><%- i %></a>
+            <%} %>
+    </div>
+</form>
+<script>
+    function addproducttocart(id) {
+        document.getElementById("form").action = "/cart/" + id
+    }
+</script>

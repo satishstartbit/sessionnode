@@ -1,0 +1,18 @@
+<header> <%- include('../navbar') %></header>
+
+
+
+<% for(let key of cartitem){ %>
+   <div class="mx-8">
+      <h2 class="font-bold text-sm"><%- key.title %> <span class="mx-10 text-blue-700">X 1</span> <span
+               class="mx-7 ">500</span></h2>
+   </div>
+   <%} %>
+
+
+      <div class="text-center my-4">
+         <a href="/checkout" class="bg-yellow-500 px-6 py-1">order now </a>
+      </div>
+      <button id="ordernow" class="bg-yellow-500 px-6 py-1">order now </button>
+
+      

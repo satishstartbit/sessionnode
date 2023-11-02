@@ -1,0 +1,10 @@
+<header> <%- include('../navbar') %></header>
+
+
+<form class="mx-10" action="/updatepassword/<%- email %>" method="POST">
+    <h2 class="font-bold text-2xl mt-8">Update your password</h2>
+    <p class="my-3 font-bold">Password</p>
+    <input class="block w-1/2 h-[40px] px-6 py-3 border-2" name="password" type="text" placeholder="Enter your Password">
+    <button class=" bg-yellow-500 py-1 px-8 rounded my-6 " type="submit">Update password</button>
+
+</form>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garo Estate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/user.css">
+</head>
+<body>
+    <nav class=" py-4 shadow-2xl my-3">
+        <ul class="grid grid-cols-12 mx-4 text-center">
+            <li><a class="no-underline  text-lg" href="/">Home </a></li>
+            <li><a class="no-underline  text-lg" href="/product">product</a></li>
+            <li><a class="no-underline  text-lg" href="/addproduct">Add product</a></li>
+            <% if(session == undefined ) { %>
+            <li><a class="no-underline  text-lg" href="/login">Login</a></li>
+            <li><a class="no-underline  text-lg" href="/register">Register</a></li>
+            <% } else  { %>
+            <li><a class="no-underline  text-lg" href="/logout">Logout</a></li>
+            <% }  %>
+            <li><a class="no-underline  text-lg" href="/cart">Place order</a></li>
+        </ul>
+    </nav>  
+</body>
+</html>

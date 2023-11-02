@@ -1,0 +1,17 @@
+<header> <%- include('../navbar') %></header>
+
+<form class="mx-10" id="register" action="/login" method="POST">
+    <h2 class="font-bold text-2xl mt-8 ">New Account</h2>
+    <hr class="border-yellow-500 border-2 w-[18%] my-3">
+    <p class="my-3 font-bold">Name</p>
+    <input class="w-1/2 h-[40px] px-6 py-3 border-2" name="name" type="text" id="name" placeholder="Enter your name">
+    <p class="my-3 font-bold">Email: </p>
+    <input class="w-1/2 h-[40px] px-6 py-3 border-2" name="email" type="email" id="email"
+        placeholder="Enter your Email">
+    <p class="my-3 font-bold">Password</p>
+    <input class="w-1/2 h-[40px] px-6 py-3 border-2" name="password" type="text" id="Password"
+        placeholder="Enter your Password">
+    <button class="block bg-yellow-500 py-1 px-8 rounded my-6 " type="submit">Register</button>
+</form>
+
+</div>
